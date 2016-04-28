@@ -81,8 +81,37 @@ Instalamos sudo con `pacman -S sudo` y con `EDITOR=nano visudo` descomentamos la
 Salimos de la sesión del administrador con `logout` e iniciamos sesión con el nuevo usuario. 
 
 Vamos a instalar el window manager predeterminado de X11 para probar que todo ha ido bien hasta el momento. Ejecutamos 
-`sudo pacman -S xorg-twm xorg-xclock xterm` y, una vez instalado, lo arrancamos con `startx`.
+`sudo pacman -S xorg-twm xorg-xclock xterm` y, una vez instalado, reiniciamos el sistema y probamos a arrancarlo con `startx`. Debería aparecer un rudimentario entorno de escritorio del que salimos con la orden `sudo pkill X`.
 
+
+### Instalación de yaourt
+
+Modificamos el archivo `/etc/pacman.conf` añadiendole al final:
+
+    [archlinuxfr]
+    SigLevel = Optional TrustAll
+    Server = http://repo.archlinux.fr/x86_64
+
+Solo queda invocar `pacman-Syu` y `pacman -S yaourt`.
+
+
+### Instalar i3-gaps
+
+Instalamos los paquetes necesarios con `pacman -S dmenu` y `yaourt -S i3-gaps-next-git`. 
+
+Luego creamos el archivo .xinitrc en el directorio personal de nuestro usuario con `nano ~/.xinitrc` y escribimos las siguientes líneas:
+
+    #!/bin/bash
+    exec i3
+
+Ahora ya podemos arrancar i3 con `startx`.
+
+
+#### Configurar el teclado en español
+
+Editamos el archivo `~/.config/i3/config` añadiendo al final la siguiente línea:
+
+    exec --no-startup-id setxkbmap -layout es
 
 
 
