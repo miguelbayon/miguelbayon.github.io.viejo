@@ -42,9 +42,18 @@ Montamos la partición raíz del disco duro en el directorio `/mnt` del CD Live 
 Ahora creamos los directorios donde montar la otra partición con `mkdir /mnt/boot` y la montamos con `mount /dev/sda1 /mnt/boot`.
 
 
-## Instalar el sistema base
+## Instalar el sistema
 
-Para instalar el sistema base usamos `pacstrap -i /mnt base base-devel` y confirmamos todas las preguntas.
+Para instalar el sistema base usamos `pacstrap /mnt base base-devel`. Finalizada la instalación usamos `pacstrap /mnt grub-bios` para instalar el gestor de arranque grub.
+
+
+## Configurar el sistema
+
+La primera tarea es generar un archivo `fstab` mediante la orden `genfstab -U /mnt > /mnt/etc/fstab`. Con `cat /mnt/etc/fstab` revisamos el archivo: debe haber tres entradas, una por cada partición.
+
+Ahora nos cambiamos a nuestro nuevo sistema recién instalado con `arc-chroot /mnt`. 
+
+Configuramos el nombre del equipo con `echo nombre_equipo > /etc/hostname`.
 
 
 
