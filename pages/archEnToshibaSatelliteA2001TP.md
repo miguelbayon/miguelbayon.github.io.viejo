@@ -124,10 +124,26 @@ Si queremos que aparezca el indicador de conexión a la red en la barra de i3 po
 
     exec --no-startup-id wicd-client --tray
 
-#### Instalar infinallity
+
+#### Mejorar las tipografías
+
+Instala las tipografías mejoradas de ubuntu con `yaourt -S cairo-ubuntu fontconfig-ubuntu libxft-ubuntu freetype2-ubuntu`. También puedes instalar más tipografías básicas con `pacman -S ttf-ms-fonts ttf-mac-fonts ttf-dejavu ttf-bitstream-vera artwiz-fonts`.
+
+Ahora solo necesitamos instalar lxappearance para activar el antialias con `pacman -S lxappearance`.
 
 
+#### Reducir los puntos por pulgada
 
+Editamos el archivo `~/.xinitrc` de tal forma que quede de esta forma:
+
+    #!/bin/bash
+    xrandr --dpi 220
+    exec i3
+    
+    
+#### Instalar Google Chrome
+
+Mediante AUR podemos instalar el navegador Chrome usando `yaourt -S google-chrome`.
 
 
 
