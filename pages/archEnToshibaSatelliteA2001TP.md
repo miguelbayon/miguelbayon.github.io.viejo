@@ -53,8 +53,17 @@ La primera tarea es generar un archivo `fstab` mediante la orden `genfstab -U /m
 
 Ahora nos cambiamos a nuestro nuevo sistema recién instalado con `arc-chroot /mnt`. 
 
-Configuramos el nombre del equipo con `echo nombre_equipo > /etc/hostname`.
+Configuramos el nombre del equipo con `echo nombre_equipo > /etc/hostname` y la zona horaria con `ln -s /usr/share/zoneinfo/America/Mexico_City /etc/localtime`.
 
+Ahora debemos configurar el idioma del sistema. Invocamos `nano /etc/local.gen` para abrir con el editor de textos el archivo `/etc/locale.gen` y descomentamos la línea `es_ES.UTF-8 UTF-8`. Ejecutamos la orden `echo es_ES.UTF-8 > /etc/locale.conf` y luego generamos los locales con la orden `locale-gen`.
+
+Para hacer fija la distribución del teclado que conseguimos usando `loadkeys` invocamos `echo KEYMAP= > /etc/vconsole.conf`.
+
+Ejecutamos `grub-install /dev/sda` y `grub-mkconfig -o /boot/grub/grub.cfg` para dejar configurado el gestor de arranque grub. Luego generamos el disco RAM inicial con `mkinitcpio -p linux`.
+
+Establecemos la contraseña del administrador con `passwd` y ya podemos salir del entorno charoot con `exit`.
+
+Finalmente desmontamos las particiones con `umount /mtn/boot` y `umount /mnt` y reiniciamos el sistema.
 
 
 
