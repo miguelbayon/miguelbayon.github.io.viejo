@@ -35,6 +35,19 @@ Terminado el particionamiento usaremos `Write` para escribir los cambios en el d
 Usamos `mkfs.ext4 /dev/sda1` y `mkfs.ext4 /dev/sda1` para formatear las dos primeras particiones. Para la swap usamos `mkswap /dev/sda3` para formatearla y `swapon /dev/sda3` para activarla.
 
 
+## Montar las particiones
+
+Montamos la partición raíz del disco duro en el directorio `/mnt` del CD Live con `mount /dev/sda2 /mnt`.
+
+Ahora creamos los directorios donde montar la otra partición con `mkdir /mnt/boot` y la montamos con `mount /dev/sda1 /mnt/boot`.
+
+
+## Instalar el sistema base
+
+Para instalar el sistema base usamos `pacstrap -i /mnt base base-devel` y confirmamos todas las preguntas.
+
+
+
 
 
 
