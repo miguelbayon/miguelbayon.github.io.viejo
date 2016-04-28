@@ -114,6 +114,17 @@ Editamos el archivo `~/.config/i3/config` añadiendo al final la siguiente líne
     exec --no-startup-id setxkbmap -layout es
 
 
+#### Instalar wicd
+
+Para conectar el equipo a la red utilizaremos el gestor wicd. Para ello lo instalamos con `pacman -S wicd wicd-cli wicd-gtk`.
+
+Indicamos al sistema que inicie el servicio cada vez que arranque con `systemctl enable wicd.service` y reiniciamos.
+
+Si queremos que aparezca el indicador de conexión a la red en la barra de i3 podemos añadir al archivo `~/.config/i3/config` la siguiente línea:
+
+    exec --no-startup-id wicd-client --tray
+
+#### Instalar infinallity
 
 
 
