@@ -66,6 +66,24 @@ Establecemos la contraseña del administrador con `passwd` y ya podemos salir de
 Finalmente desmontamos las particiones con `umount /mtn/boot` y `umount /mnt` y reiniciamos el sistema.
 
 
+## Instalación del entrono básico
+
+Al reiniciar el equipo iniciamos sesión como root y probamos si tenemos acceso a la red. Si no debemos ejecutar `dhcpcd enp4s0` para solicitar una dirección de red. 
+
+Una vez obtenido el acceso a la red pedimos al sistema que se actualice con `pacman -Syu`.
+
+Instalamos los paquetes necesarios para el funcionamiento del servidor gráfico xorg con `pacman -S xorg-server xorg-xinit xorg-utils xorg-server-utils`, para el soporte 3D con `pacman -S mesa mesa-demos` y para la tarjeta gráfica ATI con `pacman -S xf86-video-ati`.
+
+Como trabajar con el usuario administrador no es una práctica recomendable creamos un nuevo usuario llamado `miguel` con `useradd -m -g users -s /bin/bash miguel` y fiajmos su contraseña invocando `passwd miguel`.
+
+Instalamos sudo con `pacman -S sudo` y con `EDITOR=nano visudo` descomentamos la línea `%wheel ALL=(ALL)ALL` y guardamos los cambios. Ahora con añadir al usuario `miguel` al grupo `wheel` usando `gpasswd -a miguel wheel` tenemos que el nuevo usuario puede usar sudo para ejecutar comandos como administrador.
+
+Salimos de la sesión del administrador con `logout` e iniciamos sesión con el nuevo usuario. 
+
+Vamos a instalar el window manager predeterminado de X11 para probar que todo ha ido bien hasta el momento. Ejecutamos 
+`sudo pacman -S xorg-twm xorg-xclock xterm` y, una vez instalado, lo arrancamos con `startx`.
+
+
 
 
 
