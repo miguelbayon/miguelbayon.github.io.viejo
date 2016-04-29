@@ -1,3 +1,9 @@
+---
+layout: default
+title: terminology
+---
+
+
 # Terminology: mi terminal en Arch
 
 Terminology es una consola creada para el entorno de escritorio Enlightenment pero que puede ser instalada en Arch de la siguiente forma:

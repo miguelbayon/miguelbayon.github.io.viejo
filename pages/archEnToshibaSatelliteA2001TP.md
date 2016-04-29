@@ -1,3 +1,9 @@
+---
+layout: default
+title: archtoshiba
+---
+
+
 # Instalar Arch Linux en un Toshiba Satellite A2001TP
 
 Después de arrancar con el CD Live y de elegir en el menú de inicio arrancar la versiónd e 64 bits de Arch, ejecutamos `loadkeys es` para establecer el teclado en español.
