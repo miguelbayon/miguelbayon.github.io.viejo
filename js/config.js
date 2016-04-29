@@ -1,23 +1,32 @@
-$(function() {
+$($(function() {
+  
+  var modo = 'Github';
+  
+  if (window.location.host == "127.0.0.1:4000")
+  {
+    modo = 'server';
+  }
+
 
   CMS.init({
 
-    // Name of your site or location of logo file, relative to root directory (img/logo.png)
-    siteName: 'Miguel Bayon',
+    // Name of your site or location of logo file ,relative to root directory (img/logo.png)
+    siteName: 'CMS.JS THEMES',
 
     // Tagline for your site
-    siteTagline: 'El blog de un profesor de Informática',
+    siteTagline: ' The simple theme for cms.js',
 
     // Email address
-    siteEmail: 'miguel.bayon@iessanandres.com',
+    siteEmail: 'your_email@example.com',
 
     // Name
-    siteAuthor: 'Miguel Bayón',
+    siteAuthor: 'CaiCai',
 
     // Navigation items
     siteNavItems: [
-      { name: 'Github', href: 'https://github.com/miguelbayon', newWindow: false},
-      { name: 'Acerca'}
+      { name: 'About'},
+      { name: 'Github', href: 'https://github.com/hi-caicai', newWindow: false}
+
     ],
 
     // Posts folder name
@@ -27,41 +36,26 @@ $(function() {
     postSnippetLength: 120,
 
     // Pages folder name
-    pagesFolder: 'pages',
+          pagesFolder: 'pages',
 
-    // Order of sorting (true for newest to oldest)
-    sortDateOrder: true,
-
-    // Posts on Frontpage (blog style)
-    postsOnFrontpage: true,
-
-    // Page as Frontpage (static)
-    pageAsFrontpage: '',
-
-    // Posts/Blog on different URL
-    postsOnUrl: '',
+          // Order of sorting (true for newest to oldest)
+          sortDateOrder: true,
 
     // Site fade speed
     fadeSpeed: 300,
 
     // Site footer text
-    footerText: '&copy; ' + new Date().getFullYear() + ' All Rights Reserved.',
+    footerText:'Designed and Coded by CaiCai',
 
-    // Mode 'Github' for Github Pages, 'Server' for Self Hosted. Defaults
+    // Mode 'Github' for Github Pages, 'Apache' for Apache server. Defaults
     // to Github
-    mode: 'Server',
+    mode: modo,
 
-     // If Github mode is set, your Github username and repo name.
+    // If Github mode is set, your Github username and repo name. Defaults
+    // to Github pages branch (gh-pages)
     githubUserSettings: {
-      username: 'miguelbayon',
-      repo: 'miguelbayon.github.io'
-    },
-
-    // If Github mode is set, choose which Github branch to get files from.
-    // Defaults to Github pages branch (gh-pages)
-    githubSettings: {
-      branch: 'master',
-      host: 'https://api.github.com'
+      username: 'hi-caicai',
+      repo: 'cms.js-themes'
     }
 
   });
