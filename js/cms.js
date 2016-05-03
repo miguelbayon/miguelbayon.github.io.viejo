@@ -107,6 +107,7 @@ var CMS = {
   },
 
   renderPage: function (title) {
+    $('#listado-posts').hide();
     CMS.pages.sort(function (a, b) { return CMS.settings.sortDateOrder ? b.date - a.date : a.date - b.date; });
     CMS.pages.forEach(function (page) {
       if (page.title == title) {
@@ -164,6 +165,8 @@ var CMS = {
       postDate.html(date);
       CMS.settings.mainContainer.append($tpl).hide().fadeIn(CMS.settings.fadeSpeed);
     });*/
+    $('#listado-posts').show();
+    $('#page-template').hide();
     CMS.renderFooter();
   },
 
