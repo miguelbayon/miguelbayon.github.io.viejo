@@ -50,7 +50,7 @@ $(function() {
     fadeSpeed: 300,
 
     // Site footer text
-    footerText: '&copy; ' + new Date().getFullYear() + ' All Rights Reserved.',
+    footerText: '&copy; ' + new Date().getFullYear() + '. MIT LIncese',
 
     // Mode 'Github' for Github Pages, 'Server' for Self Hosted. Defaults
     // to Github

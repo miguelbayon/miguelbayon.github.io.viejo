@@ -141,7 +141,7 @@ var CMS = {
   },
 
   renderPosts: function () {
-    CMS.posts.sort(function (a, b) { return CMS.settings.sortDateOrder ? b.date - a.date : a.date - b.date; });
+    /*CMS.posts.sort(function (a, b) { return CMS.settings.sortDateOrder ? b.date - a.date : a.date - b.date; });
     CMS.posts.forEach(function (post) {
       var tpl = $(document.getElementById('post-template')).html(),
         $tpl = $(tpl);
@@ -163,7 +163,7 @@ var CMS = {
       postSnippet.html(snippet);
       postDate.html(date);
       CMS.settings.mainContainer.append($tpl).hide().fadeIn(CMS.settings.fadeSpeed);
-    });
+    });*/
     CMS.renderFooter();
   },
 
