@@ -13,3 +13,4 @@ A continuación la lista de los podcast que sigo actualmente:
 
 * "Think Wasabi" de Berto Pena
 * "Podcast Psicología y Coaching" de Mertxe Pasamontes
+* "The Success Academy Podcast" de Victor Martín
