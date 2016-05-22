@@ -55,6 +55,13 @@ var CMS = {
   pages: [],
   loaded: {},
 
+
+
+  /**********************************
+   *
+   *  Funcion extend()
+   * 
+   **********************************/
   extend: function (target, opts, callback) {
     var next;
     if (typeof opts === 'undefined') {
@@ -70,6 +77,13 @@ var CMS = {
     return target;
   },
 
+
+
+  /**********************************
+   *
+   *  Funcion render()
+   * 
+   **********************************/
   render: function (url) {
     CMS.settings.mainContainer.html('').fadeOut(CMS.settings.fadeSpeed);
     CMS.settings.footerContainer.hide();
@@ -106,6 +120,13 @@ var CMS = {
     }
   },
 
+
+
+  /**********************************
+   *
+   *  Funcion renderPage()
+   * 
+   **********************************/
   renderPage: function (title) {
     $('#listado-posts').hide();
     CMS.pages.sort(function (a, b) { return CMS.settings.sortDateOrder ? b.date - a.date : a.date - b.date; });
@@ -124,6 +145,13 @@ var CMS = {
     CMS.renderFooter();
   },
 
+
+
+  /**********************************
+   *
+   *  Funcion renderPost()
+   * 
+   **********************************/
   renderPost: function (id) {
     CMS.posts.forEach(function (post) {
       if (post.id == id) {
@@ -141,6 +169,13 @@ var CMS = {
     CMS.renderFooter();
   },
 
+
+
+  /**********************************
+   *
+   *  Funcion renderPosts()
+   * 
+   **********************************/
   renderPosts: function () {
     /*CMS.posts.sort(function (a, b) { return CMS.settings.sortDateOrder ? b.date - a.date : a.date - b.date; });
     CMS.posts.forEach(function (post) {
@@ -170,6 +205,13 @@ var CMS = {
     CMS.renderFooter();
   },
 
+
+
+  /**********************************
+   *
+   *  Funcion renderFooter()
+   * 
+   **********************************/
   renderFooter: function () {
     // Delay footer loading while waiting on ajax requests
     setTimeout(function () {
@@ -177,6 +219,13 @@ var CMS = {
     }, 800);
   },
 
+
+
+  /**********************************
+   *
+   *  Funcion renderError()
+   * 
+   **********************************/
   renderError: function (msg) {
     var tpl = $(document.getElementById('error-template')).html(),
       $tpl = $(tpl);
@@ -188,6 +237,13 @@ var CMS = {
     });
   },
 
+
+
+  /**********************************
+   *
+   *  Funcion contentLoaded()
+   * 
+   **********************************/
   contentLoaded: function (type) {
 
     CMS.loaded[type] = true;
@@ -202,6 +258,13 @@ var CMS = {
     }
   },
 
+
+
+  /**********************************
+   *
+   *  Funcion paseContent()
+   * 
+   **********************************/
   parseContent: function (content, type, file, counter, numFiles) {
 
     var data = content.split(CMS.settings.parseSeperator),
@@ -250,6 +313,13 @@ var CMS = {
     }
   },
 
+
+
+  /**********************************
+   *
+   *  Funcion getContent()
+   * 
+   **********************************/
   getContent: function (type, file, counter, numFiles) {
 
     var urlFolder = '',
