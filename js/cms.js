@@ -306,7 +306,7 @@ var CMS = {
     // Se les fija el titulo en funcion del nombre del archivo
     var url;
     if (CMS.settings.mode == 'Github') {
-      url = file.link;
+      url = file.name.split(".")[0];
       console.log(file);
       console.log(file.link);      
     } else {
