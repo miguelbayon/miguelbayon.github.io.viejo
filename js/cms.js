@@ -284,6 +284,13 @@ var CMS = {
     });
   },
 
+
+
+  /**********************************
+   *
+   *  Funcion getFiles()
+   * 
+   **********************************/
   getFiles: function (type) {
 
     var folder = '',
@@ -373,6 +380,13 @@ var CMS = {
     });
   },
 
+
+
+  /**********************************
+   *
+   *  Funcion setNavigation()
+   * 
+   **********************************/
   setNavigation: function () {
 
     var navBuilder = ['<ul>'];
@@ -421,6 +435,13 @@ var CMS = {
     });
   },
 
+
+
+  /**********************************
+   *
+   *  Funcion generateSite()
+   * 
+   **********************************/
   generateSite: function () {
 
     this.setSiteAttributes();
