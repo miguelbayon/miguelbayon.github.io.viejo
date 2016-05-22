@@ -1,8 +1,3 @@
----
-layout: default
-title: screenoff
----
-
 # Como apagar la pantalla en Linux con i3
 
 La manera más eficaz que he encontrado es usar el siguiente script:

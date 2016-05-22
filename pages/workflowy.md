@@ -1,8 +1,3 @@
----
-layout: default
-title: workflowy
----
-
 # WorkFlowy, mi gestor de tareas
 
 Me encanta WorkFlowy. Desde hace casi un mes lo utilizo como gestor de tareas. Aunque, en realidad, como bien dicen en su publicidad, es algo más, es casi como la extensión de mi cerebro. Y es que me permite apuntar todo aquello que se me pasa por la cabeza de una manera muy cómoda y rápida. 

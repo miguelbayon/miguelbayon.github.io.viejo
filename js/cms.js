@@ -267,7 +267,7 @@ var CMS = {
    **********************************/
   parseContent: function (content, type, file, counter, numFiles) {
 
-    var data = content.split(CMS.settings.parseSeperator),
+    var data = content,
       contentObj = {},
       id = counter,
       date = file.date;
@@ -276,9 +276,9 @@ var CMS = {
     contentObj.date = date;
 
     // Get content info
-    var infoData = data[1].split(/[\n\r]+/);
+    var infoData = data;
 
-    $.each(infoData, function (k, v) {
+    /*$.each(infoData, function (k, v) {
       if (v.length) {
         v.replace(/^\s+|\s+$/g, '').trim();
         var i = v.split(':');
@@ -292,11 +292,28 @@ var CMS = {
     });
 
     // Drop data we don't need
-    data.splice(0, 2);
+    if (data.length > 1)
+      data.splice(0, 2);
 
-    // Put everything back together if broken
-    var contentData = data.join();
+    // Put everything back together if broken*/
+    var contentData = data;
     contentObj.contentData = marked(contentData);
+    
+    // Se les fija automaticamente el layout de cada pagina
+    // que sera siempre el mismo
+    contentObj.layout = "default";
+    
+    // Se les fija el titulo en funcion del nombre del archivo
+    var url;
+    if (CMS.settings.mode == 'Github') {
+      url = file.link;
+      console.log(file);
+      console.log(file.link);      
+    } else {
+      url = file.name.split(CMS.settings.pagesFolder + "/")[1].split(".")[0];
+    }    
+    contentObj.title = url;
+
 
     switch(type) {
       case 'post':
@@ -518,9 +535,12 @@ var CMS = {
 
     var types = ['post', 'page'];
 
+    CMS.getFiles('page');
+
+    /*
     types.forEach(function (type) {
       CMS.getFiles(type);
-    });
+    });*/
 
     // Check for hash changes
     $(window).on('hashchange', function () {

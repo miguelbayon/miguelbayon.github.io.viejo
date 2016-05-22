@@ -1,8 +1,3 @@
----
-layout: default
-title: podcasts
----
-
 # Los podcast que escucho
 
 Ha sido un gran descubrimiento ver cómo puedo aprovechar el tiempo que dedico a tareas más tediosas y rutinarias, como las del hogar, a escuchar podcasts. 
