@@ -528,6 +528,13 @@ var CMS = {
     });
   },
 
+
+
+  /**********************************
+   *
+   *  Funcion init()
+   * 
+   **********************************/
   init: function (options) {
     if (!(options instanceof Array)) {
       return this.extend(this.settings, options, function () {

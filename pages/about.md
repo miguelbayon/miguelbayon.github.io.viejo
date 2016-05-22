@@ -1,8 +1,3 @@
----
-layout: default
-title: acercade
----
-
 # Acerca de 
 
 {::options toc_levels="2" /}
