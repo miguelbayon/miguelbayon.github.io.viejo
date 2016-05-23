@@ -5,4 +5,4 @@ Teniendo en cuenta que las limitaciones de cuota en Google Apps Script en lo ref
 Con este método, da igual el número de personas que formen parte del grupo que el envío solo computará como 1 mensaje enviado en las cuotas de Google Apps Script.
 
 
-_Ultima actualización: 23 de mayo de 2016
+_Ultima actualización: 23 de mayo de 2016_
