@@ -1,4 +1,4 @@
-# Mis aplicaciones usadas en Android
+# Las aplicaciones que más utiilizo en Android
 
 A continuación, un resumen de las aplicaciones que utilizo en mi smartphone con Android:
 
